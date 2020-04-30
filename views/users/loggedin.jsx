@@ -12,7 +12,7 @@ class Loggedin extends React.Component {
                 <head />
                 <body>
                     <h1>Welcome back to Tindr {user}!</h1>
-                    <a href="/home" title="Go to tindr. homepage">Click Me!</a>
+                    <button><a href="/home" title="Go to tindr. homepage">Tindr. Home</a></button>
                 </body>
             </html>
         );

@@ -1,17 +1,5 @@
 module.exports = (app, allModels) => {
 
-
-    /*
-     *  =========================================
-     *  =========================================
-     *  =========================================
-     *  =========================================
-     *    ALL ROUTES FOR POKEMON CONTROLLER
-     *  =========================================
-     *  =========================================
-     *  =========================================
-     */
-
     // require the controller
     const usersController = require('./controllers/users')(allModels);
     const matchesController = require('./controllers/matches')(allModels);
@@ -27,4 +15,12 @@ module.exports = (app, allModels) => {
     app.post('/registered', usersController.registered);
 
     app.get('/home', matchesController.home);
+
+    app.get('/profile', matchesController.profile);
+
+    app.get('/editprofile', matchesController.edit);
+
+    app.post('/profile/', matchesController.update);
+
+
 };

@@ -12,6 +12,6 @@ CREATE TABLE
 IF NOT EXISTS matches
 (
     id SERIAL PRIMARY KEY,
-    user_id INTEGER,
-    user_id INTEGER
+    user_id1 INTEGER,
+    user_id2 INTEGER
 );

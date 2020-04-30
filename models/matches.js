@@ -8,15 +8,12 @@ module.exports = (dbPoolInstance) => {
 
     // `dbPoolInstance` is accessible within this function scope
 
-    let registering = (user, callback) => {
+    let userProfile = (user, callback) => {
 
-        let query = 'INSERT INTO users(name, password, email, description) Values ($1, $2, $3, $4) Returning *';
-        // console.log(user.password);
-        let hashPW = sha256(user.password);
-        // console.log(hashPW);
-        let insertValues = [user.name, hashPW, user.email, user.description];
+        // console.log(user);
+        let query = 'SELECT * FROM users WHERE id = ' + user;
 
-        dbPoolInstance.query(query, insertValues, (error, queryResult) => {
+        dbPoolInstance.query(query, (error, queryResult) => {
             if (error) {
                 console.log('ERROR');
                 console.log(error);
@@ -26,24 +23,22 @@ module.exports = (dbPoolInstance) => {
         });
     };
 
-    let loggedin = (user, callback) => {
+    let updateProfile = (user, callback) => {
 
-        let query = 'SELECT * FROM users WHERE email = ($1) AND password = ($2)';
-        // console.log(user.password)
-        let hashPW = sha256(user.password);
-        let insertValues = [user.email, hashPW];
+        let query = 'UPDATE users SET name = ($1), description = ($2) WHERE id = ($3) Returning *';
+        let insertValues = [user.name, user.description, user.id];
 
         dbPoolInstance.query(query, insertValues, (error, queryResult) => {
             if (error) {
                 console.log('ERROR');
                 console.log(error);
             }
-            console.log(queryResult.rows[0].id);
+            console.log(queryResult);
             callback(error, queryResult);
         });
     };
 
     return {
-        registering, loggedin,
+        userProfile, updateProfile,
     };
 };

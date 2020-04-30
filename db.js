@@ -64,6 +64,8 @@ pool.on('error', function (err) {
 
 const allUserModelsFunctions = require('./models/users.js');
 const userModelsObject = allUserModelsFunctions(pool);
+const allMatchesModelsFunctions = require('./models/matches.js');
+const matchesModelsObject = allMatchesModelsFunctions(pool);
 
 // const allTweedsModelsFunctions = require('./models/tweeds.js');
 // const tweedrModelsObject = allTweedsModelsFunctions(pool);
@@ -96,5 +98,5 @@ module.exports = {
      */
 
     users: userModelsObject,
-    //   tweeds: tweedrModelsObject
+    matches: matchesModelsObject
 };
