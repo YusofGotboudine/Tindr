@@ -22,5 +22,12 @@ module.exports = (app, allModels) => {
 
     app.post('/profile/', matchesController.update);
 
+    app.get('/socialise', matchesController.socialise);
+
+    app.get('/socialising', matchesController.socialising);
+
+    // app.get('/profile/:id', matchesController.viewsingleprofile );
+    // match conditional
+
 
 };

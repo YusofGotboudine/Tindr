@@ -44,6 +44,33 @@ module.exports = (db) => {
         };
     };
 
+    let randomUserGen = (request, response) => {
+        let user_id = request.cookies["user_id"];
+        // console.log(user_id);
+        if (sha256(user_id + 'logged' + spice) === request.cookies["logged_in"]) {
+            db.matches.socialise(user_id, (error, queryResult) => {
+                const data = queryResult.rows[0];
+                console.log("Socialise with " + data.name + "? (Y/N)");
+                response.cookie('user_id2', data.id);
+                response.render('matches/socialise', data);
+            });
+        };
+    };
+
+    let socialising = (request, response) => {
+        let user_id = request.cookies["user_id"];
+        let user_id2 = request.cookies["user_id2"];
+        let users = { user1: user_id, user2: user_id2 };
+        console.log(matches);
+        if (sha256(user_id + 'logged' + spice) === request.cookies["logged_in"]) {
+            db.matches.matchCheck(users, (error, queryResult) => {
+                const data = queryResult;
+                console.log("Matched with " + data.name);
+                response.render('matches/socialising', data);
+            });
+        };
+    };
+
     // let postLogin = (request, response) => {
     //     console.log('User Logging In');
     //     // response.cookie('loggedin', true);
@@ -78,9 +105,8 @@ module.exports = (db) => {
         profile: profilePage,
         edit: editProfilePage,
         update: updateProfile,
-        // loggedin: postLogin,
-        // registered: postRegister
-
+        socialise: randomUserGen,
+        socialising: socialising
     };
 
 }
