@@ -14,6 +14,9 @@ class Home extends React.Component {
                         <button><a href="/profile">My Profile</a></button>
                         <button><a href="/socialise">Socialise</a></button>
                     </div>
+                    <div>
+                        <button><a href="/index">Logout</a></button>
+                    </div>
                 </body>
             </html>
         );

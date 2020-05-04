@@ -4,7 +4,7 @@ module.exports = (app, allModels) => {
     const usersController = require('./controllers/users')(allModels);
     const matchesController = require('./controllers/matches')(allModels);
 
-    app.get('/', usersController.index);
+    app.get('/index', usersController.index);
 
     app.get('/login', usersController.login);
 

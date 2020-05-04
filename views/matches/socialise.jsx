@@ -4,7 +4,7 @@ class Socialise extends React.Component {
     render() {
         console.log("Socialise Page");
         console.log("===================");
-        console.log(this.props)
+        // console.log("Socialise with " + this.props.name + "?")
 
         return (
             <html>
@@ -19,6 +19,9 @@ class Socialise extends React.Component {
                     <div>
                         <button><a href="/socialising">Yes</a></button>
                         <button><a href="/socialise">No</a></button>
+                    </div>
+                    <div>
+                        <button><a href="/home">Back to home</a></button>
                     </div>
                 </body>
             </html>

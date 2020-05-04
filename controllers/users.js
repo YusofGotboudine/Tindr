@@ -9,6 +9,9 @@ module.exports = (db) => {
      */
 
     let indexPage = (request, response) => {
+        response.cookie('user_id', '');
+        response.cookie('user_id2', '');
+        response.cookie('logged_in', '');
         response.render('users/index');
     };
 

@@ -61,39 +61,15 @@ module.exports = (db) => {
         let user_id = request.cookies["user_id"];
         let user_id2 = request.cookies["user_id2"];
         let users = { user1: user_id, user2: user_id2 };
-        console.log(matches);
         if (sha256(user_id + 'logged' + spice) === request.cookies["logged_in"]) {
             db.matches.matchCheck(users, (error, queryResult) => {
                 const data = queryResult;
-                console.log("Matched with " + data.name);
+                console.log(data);
+                // console.log("Matched with " + data.name);
                 response.render('matches/socialising', data);
             });
         };
     };
-
-    // let postLogin = (request, response) => {
-    //     console.log('User Logging In');
-    //     // response.cookie('loggedin', true);
-
-    // db.users.loggedin(request.body, (error, queryResult) => {
-    //     const data = queryResult.rows[0];
-    //     console.log("Retrieved user data: " + data.name);
-    //     response.render('users/loggedin', data);
-    // });
-    // };
-
-    // let postRegister = (request, response) => {
-    //     console.log('Registering User');
-    //     response.cookie('registered', true);
-    //     response.cookie('loggedin', true);
-
-    //     db.users.registering(request.body, (error, queryResult) => {
-    //         const data = request.body;
-    //         console.log("Registered user data: " + data.name);
-    //         response.render('users/registered', data);
-    //     });
-    // };
-
 
     /**
      * ===========================================

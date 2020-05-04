@@ -4,7 +4,14 @@ class Socialising extends React.Component {
     render() {
         console.log("Socialised Page");
         console.log("===================");
-        console.log(this.props)
+        let matchCheck = this.props.rows.length;
+        let output;
+        console.log(matchCheck);
+        if (matchCheck > 0) {
+            output = <p>It's a Match!</p>
+        } else {
+            output = <p>Requested to socialise!</p>
+        }
 
         return (
             <html>
@@ -12,12 +19,12 @@ class Socialising extends React.Component {
                 <body>
                     <h1>Tindr.</h1>
                     <div>
-                        <h2>Requested to Socialise!</h2>
+                        {output}
                     </div>
-                    {/* <div>
-                        <button><a href="/socialising">Yes</a></button>
-                        <button><a href="/socialise">No</a></button>
-                    </div> */}
+                    <div>
+                        <button><a href="/socialise">Continue</a></button>
+                        <button><a href="/home">Back to Home</a></button>
+                    </div>
                 </body>
             </html>
         );
