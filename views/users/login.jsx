@@ -6,10 +6,14 @@ class Login extends React.Component {
         console.log("===================");
         return (
             <html>
+                <link rel="stylesheet" type="text/css" href="./style.css" />
                 <head />
                 <body>
-                    <h1>Tindr Login</h1>
-                    <div>
+                    <header>
+                        <h1>Tindr.</h1>
+                    </header>
+                    <h1 id='displayBox'>Tindr Login</h1>
+                    <div id='options'>
                         <form action="/loggedin" method="POST">
                             <p>
                                 Email <input name="email" />

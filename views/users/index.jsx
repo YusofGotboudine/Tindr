@@ -7,12 +7,15 @@ class Index extends React.Component {
 
         return (
             <html>
+                <link rel="stylesheet" type="text/css" href="./style.css" />
                 <head />
                 <body>
-                    <h1>Tindr.</h1>
-                    <div>
-                        <button><a href="/login">Login</a></button>
-                        <button><a href="/register">Register</a></button>
+                    <header>
+                        <h1>Tindr.</h1>
+                    </header>
+                    <div id='options'>
+                        <button className='choiceButtons'><a href="/login">Login</a></button>
+                        <button className='choiceButtons'><a href="/register">Register</a></button>
                     </div>
                 </body>
             </html>

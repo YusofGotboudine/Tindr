@@ -10,15 +10,21 @@ class Updatedprofile extends React.Component {
 
         return (
             <html>
+                <link rel="stylesheet" type="text/css" href="/style.css" />
                 <head />
+                <header>
+                    <h1>Tindr.</h1>
+                </header>
                 <body>
-                    <h1>Welcome to your updated profile page!</h1>
+                    <h1 id='displayBox'>Welcome to your updated profile page!</h1>
                     <div>
-                        <p>{name}</p>
-                        <p>{desc}</p>
+                        <h3 id='profileName'>{name}</h3>
+                        <h3 id='profileDesc'>{desc}</h3>
                     </div>
-                    <button><a href="/editprofile">Edit Profile</a></button>
-                    <button><a href="/home" title="Go to tindr. homepage">Tindr. Home</a></button>
+                    <div id='options'>
+                        <button className='choiceButtons'><a href="/editprofile">Edit Profile</a></button>
+                        <button className='choiceButtons'><a href="/home" title="Go to tindr. homepage">Tindr. Home</a></button>
+                    </div>
                 </body>
             </html>
         );

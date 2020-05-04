@@ -8,22 +8,25 @@ class Socialising extends React.Component {
         let output;
         console.log(matchCheck);
         if (matchCheck > 0) {
-            output = <p>It's a Match!</p>
+            output = <h3 id='displayBox'>It's a Match!</h3>
         } else {
-            output = <p>Requested to socialise!</p>
+            output = <h3 id='displayBox'>Requested to socialise!</h3>
         }
 
         return (
             <html>
+                <link rel="stylesheet" type="text/css" href="./style.css" />
                 <head />
                 <body>
-                    <h1>Tindr.</h1>
+                    <header>
+                        <h1>Tindr.</h1>
+                    </header>
                     <div>
                         {output}
                     </div>
-                    <div>
-                        <button><a href="/socialise">Continue</a></button>
-                        <button><a href="/home">Back to Home</a></button>
+                    <div id='options'>
+                        <button className='choiceButtons'><a href="/socialise">Continue</a></button>
+                        <button className='choiceButtons'><a href="/home">Back to Home</a></button>
                     </div>
                 </body>
             </html>

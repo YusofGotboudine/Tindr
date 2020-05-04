@@ -7,15 +7,18 @@ class Home extends React.Component {
 
         return (
             <html>
+                <link rel="stylesheet" type="text/css" href="./style.css" />
                 <head />
                 <body>
-                    <h1>Tindr.</h1>
-                    <div>
-                        <button><a href="/profile">My Profile</a></button>
-                        <button><a href="/socialise">Socialise</a></button>
+                    <header>
+                        <h1>Tindr.</h1>
+                    </header>
+                    <div id='options'>
+                        <button className='choiceButtons'><a href="/profile">My Profile</a></button>
+                        <button className='choiceButtons'><a href="/socialise">Socialise</a></button>
                     </div>
-                    <div>
-                        <button><a href="/index">Logout</a></button>
+                    <div id='option'>
+                        <button className='choiceButtons'><a href="/index">Logout</a></button>
                     </div>
                 </body>
             </html>

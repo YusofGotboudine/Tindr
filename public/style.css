@@ -1,0 +1,49 @@
+header {
+    font-size: x-large;
+    text-align: center;
+    color: rgb(91, 65, 128);
+  }
+
+  #option{
+    display: flex;
+    justify-content: center;
+  }
+
+  #options{
+    display: flex;
+    justify-content: center;
+  }
+
+  #displayBox{
+    display: flex;
+    justify-content: center;
+    color: rgb(91, 65, 128);
+  }
+
+  #profileName{
+    display: flex;
+    justify-content: center;
+  }
+
+  #profileDesc{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .choiceButtons{
+    font-size: large;
+    border-radius: 30%;
+    background-color: cornsilk;
+    color: black;
+    border: 2px solid black;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin: 2%;
+  }
+
+  .profileDisplay{
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }

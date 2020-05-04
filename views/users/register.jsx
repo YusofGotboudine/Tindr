@@ -6,10 +6,14 @@ class Register extends React.Component {
         console.log("===================");
         return (
             <html>
+                <link rel="stylesheet" type="text/css" href="./style.css" />
                 <head />
                 <body>
-                    <h1>Tindr Registration</h1>
-                    <div>
+                    <header>
+                        <h1>Tindr.</h1>
+                    </header>
+                    <h1 id='displayBox'>Tindr Registration</h1>
+                    <div id='options'>
                         <form action="/registered" method="POST">
                             <p>
                                 Name <input name="name" />

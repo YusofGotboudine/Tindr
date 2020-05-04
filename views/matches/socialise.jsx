@@ -8,20 +8,22 @@ class Socialise extends React.Component {
 
         return (
             <html>
+                <link rel="stylesheet" type="text/css" href="./style.css" />
                 <head />
                 <body>
-                    <h1>Tindr.</h1>
+                    <header>
+                        <h1>Tindr.</h1>
+                    </header>
                     <div>
-                        {/* <h2>Look At Me, I'm Socialising!</h2> */}
-                        <h3>{this.props.name}</h3>
-                        <h3>{this.props.description}</h3>
+                        <h3 id='profileName'>{this.props.name}</h3>
+                        <h3 id='profileDesc'>{this.props.description}</h3>
                     </div>
-                    <div>
-                        <button><a href="/socialising">Yes</a></button>
-                        <button><a href="/socialise">No</a></button>
+                    <div id='options'>
+                        <button className='choiceButtons'><a href="/socialising">Yes</a></button>
+                        <button className='choiceButtons'><a href="/socialise">No</a></button>
                     </div>
-                    <div>
-                        <button><a href="/home">Back to home</a></button>
+                    <div id='option'>
+                        <button className='choiceButtons'><a href="/home">Back to home</a></button>
                     </div>
                 </body>
             </html>
