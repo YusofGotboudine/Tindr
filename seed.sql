@@ -1,8 +1,7 @@
 INSERT INTO users
     (name, password, email, description)
 VALUES
-    ('Cedric
-Llama', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '123', 'How you doin');
+    ('Cedric Llama', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', '123', 'How you doin');
 
 INSERT INTO users
     (name, password, email, description)
